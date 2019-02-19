@@ -1,0 +1,1091 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.39 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Tìm hiểu con trỏ P2</title>
+    <meta name="author" content="Võ Minh Tân">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://odakit.github.io/MyBlog/favicon.png">
+    
+
+    
+    <meta name="description" content="Pointer (Phần 2) A.Dẫn nhập Phần hôm nay mình sẽ đi tìm hiểu sâu hơn một tý về bộ nhớ RAM và cách con trỏ hoạt động nhé.
+B.Bộ nhớ RAM Trước khi vào bài hãy tìm hiểu 1 chút về kiểu dữ liệu byte.
+Như các bạn đã biết 1 byte = 8 bit và byte là đơn vị đo lường bộ nhớ
+Ví dụ : Kiểu int 4 byte , short 2 byte và char 1 byte.">
+    <meta property="og:description" content="Pointer (Phần 2) A.Dẫn nhập Phần hôm nay mình sẽ đi tìm hiểu sâu hơn một tý về bộ nhớ RAM và cách con trỏ hoạt động nhé.
+B.Bộ nhớ RAM Trước khi vào bài hãy tìm hiểu 1 chút về kiểu dữ liệu byte.
+Như các bạn đã biết 1 byte = 8 bit và byte là đơn vị đo lường bộ nhớ
+Ví dụ : Kiểu int 4 byte , short 2 byte và char 1 byte.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Tìm hiểu con trỏ P2">
+    <meta property="og:url" content="/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/">
+    <meta property="og:site_name" content="Welcome to my blog">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Welcome to my blog">
+    <meta name="twitter:description" content="Pointer (Phần 2) A.Dẫn nhập Phần hôm nay mình sẽ đi tìm hiểu sâu hơn một tý về bộ nhớ RAM và cách con trỏ hoạt động nhé.
+B.Bộ nhớ RAM Trước khi vào bài hãy tìm hiểu 1 chút về kiểu dữ liệu byte.
+Như các bạn đã biết 1 byte = 8 bit và byte là đơn vị đo lường bộ nhớ
+Ví dụ : Kiểu int 4 byte , short 2 byte và char 1 byte.">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/0c19b3662d3ff3abd76a438f40197951?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://odakit.github.io/MyBlog/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://odakit.github.io/MyBlog/">Welcome to my blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://odakit.github.io/MyBlog/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/0c19b3662d3ff3abd76a438f40197951?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://odakit.github.io/MyBlog/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/0c19b3662d3ff3abd76a438f40197951?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Võ Minh Tân</h4>
+        
+          <h5 class="sidebar-profile-bio">Chúng ta là những người mà chúng ta chọn</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://odakit.github.io/MyBlog/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://odakit.github.io/MyBlog/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://odakit.github.io/MyBlog/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://odakit.github.io/MyBlog/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://odakit.github.io/MyBlog/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ODAKIT" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.facebook.com/vo.aurorataz" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Facebook</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://odakit.github.io/MyBlog/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Tìm hiểu con trỏ P2
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-01-31T00:00:00Z">
+        
+  January 31, 2019
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<h1 id="pointer-phần-2">Pointer (Phần 2)</h1>
+
+<h2 id="a-dẫn-nhập">A.Dẫn nhập</h2>
+
+<p>Phần hôm nay mình sẽ đi tìm hiểu sâu hơn một tý về bộ nhớ RAM và cách con trỏ hoạt động nhé.</p>
+
+<h2 id="b-bộ-nhớ-ram">B.Bộ nhớ RAM</h2>
+
+<p>Trước khi vào bài hãy tìm hiểu 1 chút về kiểu dữ liệu byte.</p>
+
+<p>Như các bạn đã biết 1 byte = 8 bit  và byte là đơn vị đo lường bộ nhớ</p>
+
+<p>Ví dụ : Kiểu int 4 byte , short 2 byte và char 1 byte.</p>
+
+<p>Bạn thường hay nghe người ta hay bàn về RAM máy tính : 4GB , 8GB&hellip;</p>
+
+<p>RAM 4GB : Tức là ram chứa khoảng 4 tỷ byte</p>
+
+<p>Ram 8GB : chứa khoảng 8 tỷ byte dữ liệu.</p>
+
+<p>RAM là bộ nhớ chính của máy tính , bạn thử nghĩ xem kiểu int chiếm 4 byte , khi khai báo biến int đối với RAM 4GB thì ta chỉ khai báo được 1 tỷ biến int.Để quan lý việc lưu trữ người ta đánh thứ tự byte từ [0&hellip;3999999999]</p>
+
+<p>Ram giống như mảng 1 chiều vậy nhưng mỗi phần tử có kiểu là byte ví dụ: byte ram[4000000000] , lý thuyết hơn : ram gồm các ô nhớ , mỗi ô nhớ có kích thước 1 byte.</p>
+
+<p>Với mảng một chiều a có 4 tỷ phần tử, thì việc ta ghi a[200] sẽ hiểu là ta truy xuất giá trị tại
+&ldquo;chỉ số 200 của mảng a&rdquo;.
+Còn với RAM, ta cần phải đọc là &ldquo;truy xuất giá trị tại ĐỊA CHỈ thứ 200 của bộ nhớ RAM&rdquo;.</p>
+
+<p>OK xong phần 2 ta đã hiểu sơ sơ về RAM rồi đấy , sang phần sau sẽ còn nhiều điều thú vị nữa.</p>
+
+<h5 id="2-bản-chất-việc-khai-báo-biến">2.Bản chất việc khai báo biến</h5>
+
+<p>Nhắc lại 1 tí , RAM là mảng 1 chiều các byte , mỗi byte mang giá trị từ 0 &gt; 255.</p>
+
+<p>Ví dụ ta khai báo biến n : int n;</p>
+
+<p>Chương chình sẽ xin hệ điều hành cung cấp 4 byte k ai dùng để cung cấp cho n . Gỉa sử hệ điều hành cung cấp số byte từ 300 &gt; 303</p>
+
+<p>Vậy khi ta printf(&ldquo;%d&rdquo;,&amp;n) thì sẽ in ra số 300.</p>
+
+<p>Trong ngôn ngữ C/C++, toán tử &amp; có nhiều công dụng, 1 trong những công dụng đó là dùng để
+lấy địa chỉ của biến.
+Giả sử như ta printf(&ldquo;%d&rdquo;, &amp;n); thì sẽ in ra số 300 (vì địa chỉ của n là 300).
+Giả sử ta scanf(&ldquo;%d&rdquo;, &amp;n) thì chuyện gì xảy ra?</p>
+
+<p> Người dùng sẽ nhập vào giá trị cho biến n, giả sử nhập vào số 20.</p>
+
+<p> Hàm scanf sẽ đi đến địa chỉ lưu biến n (là 300 đó), sau đó sẽ gán giá trị tương ứng vào
+bộ nhớ.</p>
+
+<p>Cụ thể hơn là gán số 20 cho byte 300 sau đó gán số 0 cho byte 301 302 303.</p>
+
+<p>Ok nếu bạn đã hiểu hết thì bạn đã nó nền tảng tuyết vời để học con trỏ.</p>
+
+<h1 id="c-con-trỏ">C.Con trỏ</h1>
+
+<h3 id="1-định-nghĩa">1. ĐỊNH NGHĨA</h3>
+
+<p>con trỏ là một biến có địa chỉ độc lập so với vùng nhớ mà nó trỏ đến, nhưng giá trị bên trong vùng nhớ của con trỏ chính là địa chỉ của biến (hoặc địa chỉ ảo) mà nó trỏ tới</p>
+
+<p>Cú pháp khai báo con trỏ:</p>
+
+<p>Tên kiểu dữ liệu + dấu sao + tên biến.</p>
+
+<p>có nhiều cách để khai , các bạn xem để tranh nhầm lẫn.
+1.int *p</p>
+
+<p>2.int * p</p>
+
+<p>3.int* p.</p>
+
+<p>Tất cả chúng đều tương tự như nhau hết.</p>
+
+<p>Ví dụ 1:
+int <em>pi;
+Khai báo biến con trỏ tên là pi. Biến pi là một biến có kiểu int</em>.
+Vì có kiểu int* nên biến pi có thể lưu được địa chỉ các số nguyên.</p>
+
+<p>char <em>a;
+Khai báo biến con trỏ tên là a. Biến a là một biến có kiểu char</em>.
+Vì có kiểu char* nên biến a có thể lưu được địa chỉ các kí tự.</p>
+
+<p>PhanSo <em>a;
+Khai báo biến con trỏ tên là a. Biến a là một biến có kiểu PhanSo</em>.
+Vì có kiểu PhanSo* nên biến a có thể lưu được địa chỉ các PhanSo (struct PhanSo).</p>
+
+<p>VÍ DỤ 2 :
+
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+
+
+<figure class="highlight cpp language-cpp">
+  <figcaption>
+    
+      <span>archives.cpp</span><a href="http://underscorejs.org/#compact" target="_blank" rel="external">test1.cpp</a>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-cpp"><code class="cpp">
+#include &lt;stdio.h&gt;
+int main()
+{
+    int x = 12;
+    int *px = NULL; // khai báo con trỏ px, px không trỏ vào cái gì hết
+    px = &amp;x; // px lưu địa chỉ của biến x, tương đương px trỏ đến x
+}</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure></p>
+
+<p>Ví dụ 3 :
+
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+
+
+<figure class="highlight cpp language-cpp">
+  <figcaption>
+    
+      <span>archives.cpp</span><a href="http://underscorejs.org/#compact" target="_blank" rel="external">test1.cpp</a>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-cpp"><code class="cpp">
+#include &lt;stdio.h&gt;
+int main()
+{
+    int x = 13;
+    int *px = &amp;x // khai báo biến x và khởi tạo con trỏ px lưu địa chỉ biến x.
+}</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure></p>
+
+<p>Ví dụ 4 :</p>
+
+
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+
+
+<figure class="highlight cpp language-cpp">
+  <figcaption>
+    
+      <span>archives.cpp</span><a href="http://underscorejs.org/#compact" target="_blank" rel="external">test1.cpp</a>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-cpp"><code class="cpp">
+#include &lt;stdio.h&gt;
+int main()
+{
+    int x = 13;
+    float *px = &amp;x // sai , khi muốn trỏ tới 1 địa chỉ thì phải cũng kiểu dữ liệu.
+}</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h3 id="2-con-trỏ-lưu-địa-chỉ-để-làm-gì">2.Con trỏ lưu địa chỉ để làm gì?</h3>
+
+<p>Ở phần trước mình cũng nói sơ qua đó là dùng để hack game , đó là dựa vào việc biến con trỏ có thể gián tiếp quản lý biến mà nó lưu địa chỉ.</p>
+
+<p>Gỉa dụ biến n có địa chỉ là 400
+ta có đoạn code sau :
+
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+
+
+<figure class="highlight cpp language-cpp">
+  <figcaption>
+    
+      <span>archives.cpp</span><a href="http://underscorejs.org/#compact" target="_blank" rel="external">test1.cpp</a>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-cpp"><code class="cpp">
+#include &lt;stdio.h&gt;
+int main()
+{
+    int n=12;
+    int *p=&amp;n; //Lúc này ta đã cho p trỏ tới n , p gián tiếp quản lý biến n. p=400.
+    printf(&#34;%d&#34;,*p); // Hay tương tự printf(&#34;%d&#34;,n); , in ra số 12;
+    scanf(&#34;%d&#34;,p); // tương tự scanf(&#34;%d&#34;,&amp;n); nhập vào giá trị của n (mình đã có giải thích bên trên rồi.).
+
+
+}</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure></p>
+
+<p>Từ đây suy ra bạn có 2 cách nhập biến n và in biến n.</p>
+
+<p>Nhìn lại ví dụ trên, khi sử dụng toán tử * ở phía trước con trỏ có nghĩa là bạn đang lấy giá trị mà con trỏ trỏ đến.</p>
+
+<p>Ví dụ ta có kiểu int *p; , lúc này con trỏ sẽ lưu địa chỉ của 1 biến số nguyên</p>
+
+<p>Khi ta printf(&ldquo;%d&rdquo;,*p); tức là nó tìm sẽ tìm đến địa chỉ của biến số nguyên mà nó trỏ đến , cấu thành giá trị và in ra giá trị biến trỏ tới.</p>
+
+<p>Nói tóm lại khi ta dùng toán tử * ở phía trước tên biến con trỏ là ta đang sử dụng phép LẤY GIÁ TRỊ.((dereference))</p>
+
+<h3 id="3-ghi-nhớ-2-ý-quan-trọng-nhất">3.Ghi nhớ 2 ý quan trọng nhất.</h3>
+
+<p>Con trỏ là biến dùng để lưu địa chỉ , khi ta nói con trỏ p lưu địa chỉ biến x tức là</p>
+
+<p>1.P trỏ đến x.</p>
+
+<p>2.P gián tiếp quản lý biến x.</p>
+
+<h1 id="d-các-phép-toán-trên-con-trỏ">D.Các phép toán trên con trỏ.</h1>
+
+<h3 id="1-lấy-giá-trị">1.Lấy giá trị</h3>
+
+<p>Đơn giản rồi , mình sẽ gán dấu * trước con trỏ khi in</p>
+
+<h3 id="2-phép-so-sánh">2.Phép so sánh</h3>
+
+<p>So sánh 2 con trỏ = so sánh 2 địa chỉ trên bộ nhớ RAM</p>
+
+<h3 id="3-thay-đổi-con-trỏ">3.Thay đổi con trỏ</h3>
+
+<p>Gỉa dụ ta cho 1 con trỏ kiểu int trỏ tới địa chỉ 400 ta code như sau :</p>
+
+<p>int <em>p = (int</em>)400;</p>
+
+<p>theo các bạn nếu mình lấy p++ thì p sẽ bằng bao nhiêu (trả lời trước khi mình đưa ra đáp án).</p>
+
+<p>Tương tự p+=2 , p+=3 &hellip; p+=n. thì sẽ như thế nào?</p>
+
+<p>chắc bạn nghĩ p++ = 401 , p+=2 = 402 , p+=n = p+n :))</p>
+
+<p>Ban đầu p là con trỏ kiểu int (4 byte) khi ta thực hiện p=p+1 ; nó lập tức trỏ đến byte của số nguyen tiếp theo . tức là 404.
+Tại vì sao? . Vì con trỏ p lưu địa chỉ kiểu int 4 byte thì nó sẽ chiếm địa chỉ ở ô 400 , 401 , 402  , 403 .
+Khi ta thực hiện p = p+1 , nó sẽ nhảy sang ô 404.</p>
+
+<p>Tương tự p+=2; sẽ nhảy sang địa chỉ 408 , bạn từ đây mà suy ra nhé , rất quan trọng.</p>
+
+<p>Làm các bài sau đây cho nhớ :</p>
+
+<p>int <em>p = (int</em>)700;</p>
+
+<p>1.Hãy cho biết giá trị của p khi ta thực hiện lệnh sau: p = p + 2;</p>
+
+<p>Đán án: p = 708.</p>
+
+<p>char <em>p = (char</em>)700;</p>
+
+<p>2.Hãy cho biết giá trị của p khi ta thực hiện lệnh sau: p = p + 2;</p>
+
+<p>Đán án: p = 702.</p>
+
+<p>3.short <em>p = (short</em>)700;  (Cho biết kiểu short có độ lớn 2 bytes.)</p>
+
+<p>Hãy cho biết giá trị của p khi ta thực hiện lệnh sau: p = p - 3;</p>
+
+<p>Đán án: p = 694.</p>
+
+<h3 id="d-kiến-thức-mở-rộng">D.Kiến thức mở rộng</h3>
+
+<p>1.</p>
+
+<p>Bạn có bao giờ thử truy xuất phần tử âm trong mảng chưa.</p>
+
+<p>Truy xuất phần tử âm của mảng là điều bất hợp lý , có thể sẽ gây vi phạm bộ nhớ , vì vậy mảng thường bắt đầu bằng số 0 nhưng trong một số trường hợp ta cần truy xuất phần tử âm , vậy con trỏ sẽ giúp ta làm điều này.</p>
+
+<p>Gỉa dụ ta có mảng a , con trỏ p , ta có p = &amp;a[3]</p>
+
+<p>Khi ta in *p hay p[0] thì nó sẽ in ra GIÁ TRỊ a[3].</p>
+
+<p>Khi ta in *(p-1) hay p[-1] thì nó sẽ in ra giá trị a[2]</p>
+
+<p>Hay *(p-3) hay p[-3] thì nó sẽ in ra a[0]</p>
+
+<p>Đó là sự thần thánh của con trỏ , từ đây bạn suy ra nhé.</p>
+
+<p>2.
+khi ta ghi a[2] thì C/C++ hiểu là *(a+2).Vậy nếu ta ghi 2[a] thì sao???</p>
+
+<p>Cũng hiểu là *(2+a) &lt;=&gt; a[2].</p>
+
+<p>3.Tại sao mảng lại bắt đầu bằng con số 0?</p>
+
+<p>Nếu ta bắt đầu bằng a[1] tức là bỏ sót giá trị a[0] , vì vị trí 0 là vị trí bắt đầu giá trị trong bộ nhớ ram</p>
+
+<p>Gỉa trụ ta có mảng HocSinh , mà một học sinh lại cần có tên , lớp , trường , mã học sinh bla bla thì nếu bảng bỏ sót vị trí thứ 0 , bạn đã hao hết biết bao nhiêu tài nguyên , hàng trăm byte.</p>
+
+<p>Nhìn chung, khi mảng bắt đầu từ 1 ta cảm thấy tự nhiên hơn nhưng ta đã lãng phí bộ nhớ và
+có thể làm chậm tốc độ tính toán 1 chút xíu.</p>
+
+<h2 id="e-bài-tập">E.BÀI TẬP</h2>
+
+<p>đây là bài mình sưu tầm trên mạng , bạn có thể làm thêm để hiểu hơn về con trỏ.</p>
+
+<p>Bài 1. Nhập vào mảng 1 chiều, tính tổng các phần tử của mảng. Thao tác xuất ra mảng phải
+thực hiện bằng con trỏ. Không cần viết thêm hàm phụ.
+for (p = a; p &lt; a+n; p++)
+in ra màn hình *p;</p>
+
+<p>Bài 2. Nhập vào mảng 1 chiều, tính tổng các phần tử của mảng. Thao tác tính tổng các phần tử
+thực hiện bằng phép tính với con trỏ như ở dưới. Không cần viết thêm hàm phụ.
+for (i = 0; i &lt; n; i++)
+tong = tong + *(a + i);</p>
+
+<p>Bài 3. Nhập vào mảng 1 chiều, in ra mảng ngược. Thao tác in ra mảng ngược được code bằng 3
+cách khác nhau, mỗi cách viết trong 1 hàm.
+Cách 1:
+for (i = n-1; i &gt;= 0; i&ndash;)
+In ra màn hình a[i];</p>
+
+<p>Cách 2:
+for (i = n-1; i &gt;= 0; i&ndash;)
+In ra màn hình *(a+i);</p>
+
+<p>Cách 3:
+for (p = a + n-1; p &gt;= a; p&ndash;)
+In ra màn hình *p;</p>
+
+<p>Bài 4. Nhập vào mảng 1 chiều, tính tổng các số chẵn của mảng. Yêu cầu: mọi thao tác nhập, xuất, tính tổng đều phải thực hiện bằng con trỏ. Không cần viết thêm hàm phụ.</p>
+
+<p>Bài 5. Viết hàm tìm kiếm một giá trị nào đó trong mảng. Chương trình phải có code minh họa.Hàm này có dạng như sau</p>
+
+<p>int* TimKiem(int *a, int n, int GiaTri)</p>
+
+<p>Hàm truyền vào một mảng số nguyên (a), số lượng phần tử (n) và giá trị cần tìm kiếm.</p>
+
+<p>Hàm trả về địa chỉ của phần tử = GiaTri xuất hiện đầu tiên trong mảng. Nếu không tìm</p>
+
+<p>được thì trả về NULL.</p>
+
+<p>Ví dụ: cho mảng a = { 5, 9, 1, 6, 7, 3, 7 }</p>
+
+<p>Gọi hàm TimKiem (a, 6, 7) sẽ trả về địa chỉ của a[4]  xuất ra vị trí là 4.</p>
+
+<p>Gọi hàm TimKiem (a, 6, 9) sẽ trả về địa chỉ của a[1]  xuất ra vị trí là 1.</p>
+
+<p>Gọi hàm TimKiem (a, 6, 2) sẽ trả về NULL  xuất ra kết quả “không tìm thấy”.</p>
+
+<p>Bài 6. Viết hàm tìm kiếm số nguyên tố trong mảng. Chương trình phải có code minh họa.
+Hàm này có dạng như sau</p>
+
+<p>int* TimKiemSNT(int *a, int n)</p>
+
+<p>Hàm truyền vào một mảng số nguyên (a) và số lượng phần tử của mảng (n).Hàm trả về địa chỉ của số nguyên tố xuất hiện đầu tiên trong mảng. Nếu không tìm thấy thì trả về NULL.</p>
+
+<p>*Ví dụ 1: cho mảng a = { 0, -2, 5, 8, 7 }</p>
+
+<p>Mảng a này có 2 số nguyên tố là 5 và 7.</p>
+
+<p>Gọi hàm TimKiemSNT (a, 5) sẽ trả về địa chỉ của a[2] vì a[2] = 5.</p>
+
+<p>*Ví dụ 2: cho mảng a = { -2, 10, 8, 0 }</p>
+
+<p>Gọi hàm TimKiemSNT (a, 4) sẽ trả NULL vì không tìm thấy số nguyên tố nào cả.</p>
+
+<p>Nếu không làm đc , có thể inbox mình hỗ trợ , mình sưu tầm nên mình cũng chưa làm thử , nhưng nhìn chung cũng khá đơn giản.</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://odakit.github.io/MyBlog/tags/c/c&#43;&#43;/">C/C&#43;&#43;</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://odakit.github.io/MyBlog/2019/02/c%C3%A1ch-t%E1%BA%A1o-m%E1%BB%99t-virus-keylogger-%C4%91%C6%A1n-gi%E1%BA%A3n/" data-tooltip="Cách tạo một virus keylogger đơn giản">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p1/" data-tooltip="Tìm hiểu con trỏ P1">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 Võ Minh Tân. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://odakit.github.io/MyBlog/2019/02/c%C3%A1ch-t%E1%BA%A1o-m%E1%BB%99t-virus-keylogger-%C4%91%C6%A1n-gi%E1%BA%A3n/" data-tooltip="Cách tạo một virus keylogger đơn giản">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p1/" data-tooltip="Tìm hiểu con trỏ P1">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fodakit.github.io%2FMyBlog%2F2019%2F01%2Ft%25C3%25ACm-hi%25E1%25BB%2583u-con-tr%25E1%25BB%258F-p2%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fodakit.github.io%2FMyBlog%2F2019%2F01%2Ft%25C3%25ACm-hi%25E1%25BB%2583u-con-tr%25E1%25BB%258F-p2%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fodakit.github.io%2FMyBlog%2F2019%2F01%2Ft%25C3%25ACm-hi%25E1%25BB%2583u-con-tr%25E1%25BB%258F-p2%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/0c19b3662d3ff3abd76a438f40197951?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Võ Minh Tân</h4>
+    
+      <div id="about-card-bio">Chúng ta là những người mà chúng ta chọn</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Freelance coder
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Việt Nam
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://odakit.github.io/MyBlog/2019/02/c%C3%A1ch-t%E1%BA%A1o-m%E1%BB%99t-virus-keylogger-%C4%91%C6%A1n-gi%E1%BA%A3n/">
+                <h3 class="media-heading">Cách tạo một virus keylogger đơn giản</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Okay! , đây là một chương trình cực kì đơn giản và ai cũng sẽ viết được , tuy nhiên trước khi vào code thì ta cần tìm hiểu về các hàm bắt sự kiện từ bàn phím trước.(nếu các bạn theo dõi các clip game của mình thì có _kbhit() của conio.h cũng được)
+Đó là hàm GetAsyncKeyState() trong thư viện Window.h
+Vậy thôi không nói nhiều nữa , sau đây là code của mình cực kì dễ hiểu và ngắn gọn</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/">
+                <h3 class="media-heading">Tìm hiểu con trỏ P2</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Pointer (Phần 2) A.Dẫn nhập Phần hôm nay mình sẽ đi tìm hiểu sâu hơn một tý về bộ nhớ RAM và cách con trỏ hoạt động nhé.
+B.Bộ nhớ RAM Trước khi vào bài hãy tìm hiểu 1 chút về kiểu dữ liệu byte.
+Như các bạn đã biết 1 byte = 8 bit và byte là đơn vị đo lường bộ nhớ
+Ví dụ : Kiểu int 4 byte , short 2 byte và char 1 byte.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p1/">
+                <h3 class="media-heading">Tìm hiểu con trỏ P1</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Pointer (Phần 1) Phần 1 : Dẫn nhập A.Giới thiệu Khi tìm hiểu con trỏ , chắc bạn đã năm được các khai niệm cơ bản về lập trình ngôn ngữ C hoặc C++ , ngoài ra để hiểu tốt bài này các bạn cần hiểu thêm về bộ nhớ RAM.
+Khi khai báo một biến , các bạn chỉ quan tâm giá trị của biến đó và thông thường khi học các ngôn ngữ lập trình chúng ta chỉ đều quan tâm đến giá trị của chúng ví dụ:</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://odakit.github.io/MyBlog/2019/01/project-t%E1%BB%B1-l%C3%A0m-khi-k%E1%BA%BFt-th%C3%BAc-h%E1%BB%8Dc-ph%E1%BA%A7n-nmlt/">
+                <h3 class="media-heading">Project tự làm khi kết thúc học phần NMLT</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Một số project mình tự làm Sau đây là một số project mình tự làm sau khi kết thúc học phần NMLT Các game dưới đây mình đều k làm giao diện start game trên console vì mình lười :))
+1.Snake Có lẽ đây là con game khá căn bản và có thể là con game đầu tiên của mọi người vì nó chỉ cần xử những thứ rất căn bản(dồn mảng , thêm phần tử vào mảng &hellip;) , mình làm con này khá tốn sức vì lúc làm game này mình chỉ mới học xong struct ở trên trường và cũng chưa thạo lắm , với sự mày mò và google thì mình cũng đã làm được.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://odakit.github.io/MyBlog/2019/01/c%C3%B9ng-h%E1%BB%8Dc-%C4%91i%E1%BB%87n-to%C3%A1n-%C4%91%C3%A1m-m%C3%A2y-trong-30s/">
+                <h3 class="media-heading">Cùng học điện toán đám mây trong 30s</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">-Khi đọc các khái niệm về điện toán đám mây trên các trang khác chắc chắn các bạn sẽ cảm thấy rất khó hiểu vì nó khá chi tiết , nhưng nói ngắn gọn thì điện toán đám mấy như một máy chủ ảo khổng lồ – là một kho lưu trữ không có giới về dung lượng , ” đám mây ” ở đây ám chỉ sự rộng lớn và không giới hạn.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         5 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://odakit.github.io/MyBlog/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://odakit.github.io/MyBlog/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/odakit.github.io\/MyBlog\/2019\/01\/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2\/';
+          
+            this.page.identifier = '\/2019\/01\/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+

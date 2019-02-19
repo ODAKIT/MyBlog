@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/home/hero/</loc>
+    <lastmod>2017-10-15T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/home/about/</loc>
+    <lastmod>2016-04-20T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/home/publications_selected/</loc>
+    <lastmod>2016-04-20T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/home/publications/</loc>
+    <lastmod>2016-04-20T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/home/talks/</loc>
+    <lastmod>2016-04-20T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/home/posts/</loc>
+    <lastmod>2016-04-20T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/home/projects/</loc>
+    <lastmod>2016-04-20T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/home/teaching/</loc>
+    <lastmod>2016-04-20T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/home/tags/</loc>
+    <lastmod>2017-09-20T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/home/contact/</loc>
+    <lastmod>2016-04-20T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/2019/02/c%C3%A1ch-t%E1%BA%A1o-m%E1%BB%99t-virus-keylogger-%C4%91%C6%A1n-gi%E1%BA%A3n/</loc>
+    <lastmod>2019-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/</loc>
+    <lastmod>2019-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p1/</loc>
+    <lastmod>2019-01-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/2019/01/project-t%E1%BB%B1-l%C3%A0m-khi-k%E1%BA%BFt-th%C3%BAc-h%E1%BB%8Dc-ph%E1%BA%A7n-nmlt/</loc>
+    <lastmod>2019-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/2019/01/c%C3%B9ng-h%E1%BB%8Dc-%C4%91i%E1%BB%87n-to%C3%A1n-%C4%91%C3%A1m-m%C3%A2y-trong-30s/</loc>
+    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/tags/academic/</loc>
+    <lastmod>2017-01-01T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/talk/example-talk/</loc>
+    <lastmod>2017-01-01T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/publication/</loc>
+    <lastmod>2017-01-01T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/talk/</loc>
+    <lastmod>2017-01-01T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/project/deep-learning/</loc>
+    <lastmod>2016-04-27T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/project/example-external-project/</loc>
+    <lastmod>2016-04-27T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/publication/person-re-identification/</loc>
+    <lastmod>2015-09-01T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/publication/clothing-search/</loc>
+    <lastmod>2013-07-01T00:00:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/archives/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/tags/c/c&#43;&#43;/</loc>
+    <lastmod>2019-02-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/tags/deep-learning/</loc>
+    <lastmod>2016-04-27T00:00:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/tags/demo/</loc>
+    <lastmod>2016-04-27T00:00:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/home/</loc>
+    <lastmod>2017-10-15T00:00:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/post/</loc>
+    <lastmod>2019-02-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/project/</loc>
+    <lastmod>2016-04-27T00:00:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/tags/</loc>
+    <lastmod>2017-01-01T00:00:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/tags/turorial/</loc>
+    <lastmod>2019-02-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://odakit.github.io/MyBlog/</loc>
+    <lastmod>2017-10-15T00:00:00+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

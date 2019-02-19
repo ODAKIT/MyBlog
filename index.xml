@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome to my blog</title>
+    <link>https://odakit.github.io/MyBlog/</link>
+    <description>Recent content on Welcome to my blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0700</lastBuildDate>
+    
+	<atom:link href="https://odakit.github.io/MyBlog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Academic</title>
+      <link>https://odakit.github.io/MyBlog/home/hero/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/home/hero/</guid>
+      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes :rocket: Latest release  
+(function defer() { if (window.jQuery) { jQuery(document).ready(function(){ GetLatestReleaseInfo(); }); } else { setTimeout(function() { defer() }, 50); } })(); function GetLatestReleaseInfo() { $.getJSON(&#39;https://api.github.com/repos/gcushen/hugo-academic/tags&#39;).done(function (json) { let release = json[0]; // let downloadURL = release.zipball_url; $(&#39;#academic-release&#39;).text(&#39;Latest release &#39; + release.name); }); }  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://odakit.github.io/MyBlog/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/home/about/</guid>
+      <description>Biography Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.</description>
+    </item>
+    
+    <item>
+      <title>Selected Publications</title>
+      <link>https://odakit.github.io/MyBlog/home/publications_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/home/publications_selected/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Publications</title>
+      <link>https://odakit.github.io/MyBlog/home/publications/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/home/publications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://odakit.github.io/MyBlog/home/talks/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/home/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Posts</title>
+      <link>https://odakit.github.io/MyBlog/home/posts/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/home/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://odakit.github.io/MyBlog/home/projects/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/home/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://odakit.github.io/MyBlog/home/teaching/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/home/teaching/</guid>
+      <description>This is an example of using the custom widget to create your own homepage section.
+I am a teaching instructor for the following courses at University X:
+ CS101: An intro to computer science CS102: An intro to computer science CS103: An intro to computer science CS104: An intro to computer science CS105: An intro to computer science CS106: An intro to computer science CS107: An intro to computer science  </description>
+    </item>
+    
+    <item>
+      <title>Tags</title>
+      <link>https://odakit.github.io/MyBlog/home/tags/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/home/tags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://odakit.github.io/MyBlog/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/home/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cách tạo một virus keylogger đơn giản</title>
+      <link>https://odakit.github.io/MyBlog/2019/02/c%C3%A1ch-t%E1%BA%A1o-m%E1%BB%99t-virus-keylogger-%C4%91%C6%A1n-gi%E1%BA%A3n/</link>
+      <pubDate>Tue, 19 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/2019/02/c%C3%A1ch-t%E1%BA%A1o-m%E1%BB%99t-virus-keylogger-%C4%91%C6%A1n-gi%E1%BA%A3n/</guid>
+      <description>Okay! , đây là một chương trình cực kì đơn giản và ai cũng sẽ viết được , tuy nhiên trước khi vào code thì ta cần tìm hiểu về các hàm bắt sự kiện từ bàn phím trước.(nếu các bạn theo dõi các clip game của mình thì có _kbhit() của conio.h cũng được)
+Đó là hàm GetAsyncKeyState() trong thư viện Window.h
+Vậy thôi không nói nhiều nữa , sau đây là code của mình cực kì dễ hiểu và ngắn gọn</description>
+    </item>
+    
+    <item>
+      <title>Tìm hiểu con trỏ P2</title>
+      <link>https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/</guid>
+      <description>Pointer (Phần 2) A.Dẫn nhập Phần hôm nay mình sẽ đi tìm hiểu sâu hơn một tý về bộ nhớ RAM và cách con trỏ hoạt động nhé.
+B.Bộ nhớ RAM Trước khi vào bài hãy tìm hiểu 1 chút về kiểu dữ liệu byte.
+Như các bạn đã biết 1 byte = 8 bit và byte là đơn vị đo lường bộ nhớ
+Ví dụ : Kiểu int 4 byte , short 2 byte và char 1 byte.</description>
+    </item>
+    
+    <item>
+      <title>Tìm hiểu con trỏ P1</title>
+      <link>https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p1/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p1/</guid>
+      <description>Pointer (Phần 1) Phần 1 : Dẫn nhập A.Giới thiệu Khi tìm hiểu con trỏ , chắc bạn đã năm được các khai niệm cơ bản về lập trình ngôn ngữ C hoặc C++ , ngoài ra để hiểu tốt bài này các bạn cần hiểu thêm về bộ nhớ RAM.
+Khi khai báo một biến , các bạn chỉ quan tâm giá trị của biến đó và thông thường khi học các ngôn ngữ lập trình chúng ta chỉ đều quan tâm đến giá trị của chúng ví dụ:</description>
+    </item>
+    
+    <item>
+      <title>Project tự làm khi kết thúc học phần NMLT</title>
+      <link>https://odakit.github.io/MyBlog/2019/01/project-t%E1%BB%B1-l%C3%A0m-khi-k%E1%BA%BFt-th%C3%BAc-h%E1%BB%8Dc-ph%E1%BA%A7n-nmlt/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/2019/01/project-t%E1%BB%B1-l%C3%A0m-khi-k%E1%BA%BFt-th%C3%BAc-h%E1%BB%8Dc-ph%E1%BA%A7n-nmlt/</guid>
+      <description>Một số project mình tự làm Sau đây là một số project mình tự làm sau khi kết thúc học phần NMLT Các game dưới đây mình đều k làm giao diện start game trên console vì mình lười :))
+1.Snake Có lẽ đây là con game khá căn bản và có thể là con game đầu tiên của mọi người vì nó chỉ cần xử những thứ rất căn bản(dồn mảng , thêm phần tử vào mảng &amp;hellip;) , mình làm con này khá tốn sức vì lúc làm game này mình chỉ mới học xong struct ở trên trường và cũng chưa thạo lắm , với sự mày mò và google thì mình cũng đã làm được.</description>
+    </item>
+    
+    <item>
+      <title>Cùng học điện toán đám mây trong 30s</title>
+      <link>https://odakit.github.io/MyBlog/2019/01/c%C3%B9ng-h%E1%BB%8Dc-%C4%91i%E1%BB%87n-to%C3%A1n-%C4%91%C3%A1m-m%C3%A2y-trong-30s/</link>
+      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/2019/01/c%C3%B9ng-h%E1%BB%8Dc-%C4%91i%E1%BB%87n-to%C3%A1n-%C4%91%C3%A1m-m%C3%A2y-trong-30s/</guid>
+      <description>-Khi đọc các khái niệm về điện toán đám mây trên các trang khác chắc chắn các bạn sẽ cảm thấy rất khó hiểu vì nó khá chi tiết , nhưng nói ngắn gọn thì điện toán đám mấy như một máy chủ ảo khổng lồ – là một kho lưu trữ không có giới về dung lượng , ” đám mây ” ở đây ám chỉ sự rộng lớn và không giới hạn.</description>
+    </item>
+    
+    <item>
+      <title>Example Talk</title>
+      <link>https://odakit.github.io/MyBlog/talk/example-talk/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/talk/example-talk/</guid>
+      <description>Embed your slides or video here using shortcodes. Further details can easily be added using Markdown and $\rm \LaTeX$ math code.</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>https://odakit.github.io/MyBlog/project/deep-learning/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/project/deep-learning/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.</description>
+    </item>
+    
+    <item>
+      <title>External Project</title>
+      <link>https://odakit.github.io/MyBlog/project/example-external-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/project/example-external-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Person Re-Identification System For Mobile Devices</title>
+      <link>https://odakit.github.io/MyBlog/publication/person-re-identification/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/publication/person-re-identification/</guid>
+      <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
+    </item>
+    
+    <item>
+      <title>Mobile visual clothing search</title>
+      <link>https://odakit.github.io/MyBlog/publication/clothing-search/</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0700</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/publication/clothing-search/</guid>
+      <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
+    </item>
+    
+  </channel>
+</rss>

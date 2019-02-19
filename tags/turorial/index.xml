@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Turorial on Welcome to my blog</title>
+    <link>https://odakit.github.io/MyBlog/tags/turorial/</link>
+    <description>Recent content in Turorial on Welcome to my blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://odakit.github.io/MyBlog/tags/turorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cách tạo một virus keylogger đơn giản</title>
+      <link>https://odakit.github.io/MyBlog/2019/02/c%C3%A1ch-t%E1%BA%A1o-m%E1%BB%99t-virus-keylogger-%C4%91%C6%A1n-gi%E1%BA%A3n/</link>
+      <pubDate>Tue, 19 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/2019/02/c%C3%A1ch-t%E1%BA%A1o-m%E1%BB%99t-virus-keylogger-%C4%91%C6%A1n-gi%E1%BA%A3n/</guid>
+      <description>Okay! , đây là một chương trình cực kì đơn giản và ai cũng sẽ viết được , tuy nhiên trước khi vào code thì ta cần tìm hiểu về các hàm bắt sự kiện từ bàn phím trước.(nếu các bạn theo dõi các clip game của mình thì có _kbhit() của conio.h cũng được)
+Đó là hàm GetAsyncKeyState() trong thư viện Window.h
+Vậy thôi không nói nhiều nữa , sau đây là code của mình cực kì dễ hiểu và ngắn gọn</description>
+    </item>
+    
+  </channel>
+</rss>

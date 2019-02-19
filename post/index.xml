@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Welcome to my blog</title>
+    <link>https://odakit.github.io/MyBlog/post/</link>
+    <description>Recent content in Posts on Welcome to my blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://odakit.github.io/MyBlog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cách tạo một virus keylogger đơn giản</title>
+      <link>https://odakit.github.io/MyBlog/2019/02/c%C3%A1ch-t%E1%BA%A1o-m%E1%BB%99t-virus-keylogger-%C4%91%C6%A1n-gi%E1%BA%A3n/</link>
+      <pubDate>Tue, 19 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/2019/02/c%C3%A1ch-t%E1%BA%A1o-m%E1%BB%99t-virus-keylogger-%C4%91%C6%A1n-gi%E1%BA%A3n/</guid>
+      <description>Okay! , đây là một chương trình cực kì đơn giản và ai cũng sẽ viết được , tuy nhiên trước khi vào code thì ta cần tìm hiểu về các hàm bắt sự kiện từ bàn phím trước.(nếu các bạn theo dõi các clip game của mình thì có _kbhit() của conio.h cũng được)
+Đó là hàm GetAsyncKeyState() trong thư viện Window.h
+Vậy thôi không nói nhiều nữa , sau đây là code của mình cực kì dễ hiểu và ngắn gọn</description>
+    </item>
+    
+    <item>
+      <title>Tìm hiểu con trỏ P2</title>
+      <link>https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p2/</guid>
+      <description>Pointer (Phần 2) A.Dẫn nhập Phần hôm nay mình sẽ đi tìm hiểu sâu hơn một tý về bộ nhớ RAM và cách con trỏ hoạt động nhé.
+B.Bộ nhớ RAM Trước khi vào bài hãy tìm hiểu 1 chút về kiểu dữ liệu byte.
+Như các bạn đã biết 1 byte = 8 bit và byte là đơn vị đo lường bộ nhớ
+Ví dụ : Kiểu int 4 byte , short 2 byte và char 1 byte.</description>
+    </item>
+    
+    <item>
+      <title>Tìm hiểu con trỏ P1</title>
+      <link>https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p1/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/2019/01/t%C3%ACm-hi%E1%BB%83u-con-tr%E1%BB%8F-p1/</guid>
+      <description>Pointer (Phần 1) Phần 1 : Dẫn nhập A.Giới thiệu Khi tìm hiểu con trỏ , chắc bạn đã năm được các khai niệm cơ bản về lập trình ngôn ngữ C hoặc C++ , ngoài ra để hiểu tốt bài này các bạn cần hiểu thêm về bộ nhớ RAM.
+Khi khai báo một biến , các bạn chỉ quan tâm giá trị của biến đó và thông thường khi học các ngôn ngữ lập trình chúng ta chỉ đều quan tâm đến giá trị của chúng ví dụ:</description>
+    </item>
+    
+    <item>
+      <title>Project tự làm khi kết thúc học phần NMLT</title>
+      <link>https://odakit.github.io/MyBlog/2019/01/project-t%E1%BB%B1-l%C3%A0m-khi-k%E1%BA%BFt-th%C3%BAc-h%E1%BB%8Dc-ph%E1%BA%A7n-nmlt/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/2019/01/project-t%E1%BB%B1-l%C3%A0m-khi-k%E1%BA%BFt-th%C3%BAc-h%E1%BB%8Dc-ph%E1%BA%A7n-nmlt/</guid>
+      <description>Một số project mình tự làm Sau đây là một số project mình tự làm sau khi kết thúc học phần NMLT Các game dưới đây mình đều k làm giao diện start game trên console vì mình lười :))
+1.Snake Có lẽ đây là con game khá căn bản và có thể là con game đầu tiên của mọi người vì nó chỉ cần xử những thứ rất căn bản(dồn mảng , thêm phần tử vào mảng &amp;hellip;) , mình làm con này khá tốn sức vì lúc làm game này mình chỉ mới học xong struct ở trên trường và cũng chưa thạo lắm , với sự mày mò và google thì mình cũng đã làm được.</description>
+    </item>
+    
+    <item>
+      <title>Cùng học điện toán đám mây trong 30s</title>
+      <link>https://odakit.github.io/MyBlog/2019/01/c%C3%B9ng-h%E1%BB%8Dc-%C4%91i%E1%BB%87n-to%C3%A1n-%C4%91%C3%A1m-m%C3%A2y-trong-30s/</link>
+      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://odakit.github.io/MyBlog/2019/01/c%C3%B9ng-h%E1%BB%8Dc-%C4%91i%E1%BB%87n-to%C3%A1n-%C4%91%C3%A1m-m%C3%A2y-trong-30s/</guid>
+      <description>-Khi đọc các khái niệm về điện toán đám mây trên các trang khác chắc chắn các bạn sẽ cảm thấy rất khó hiểu vì nó khá chi tiết , nhưng nói ngắn gọn thì điện toán đám mấy như một máy chủ ảo khổng lồ – là một kho lưu trữ không có giới về dung lượng , ” đám mây ” ở đây ám chỉ sự rộng lớn và không giới hạn.</description>
+    </item>
+    
+  </channel>
+</rss>
